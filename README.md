@@ -1,100 +1,30 @@
-d3sparql.js
-===========
+Mini projet Web sémantique
+============================
 
-JavaScript library for executing SPARQL query and transforming resulted JSON for visualization in D3.js.
+# Description
+Pour ce mini-projet axé sur le Web sémantique, je propose de développer une application qui recueille des données sur des films, les modélise en RDF(S), permet aux utilisateurs de rechercher et de filtrer les films selon différents critères, et fournit des informations détaillées sur chaque film.
 
-### Description
+# Structure de projet
+- app : code source de l'application en HTML+JavaScript+CSS 
+- app/cache : fichiers .json en local pour faciliter les tests et les modifications
+- Data.ttl : jeu de données original sous la forme de turtle(pretty)
+- rapport.pdf : rapport final expliquant le jeu des données et l'application
 
-Semantic Web technologies are being widely applied in life sciences. Major bioinformatics data centers started to provide heterogeneous biomedical datasets in RDF and expose them at SPARQL endpoints. SPARQL query is used to search those endpoints and the results are obtained as a SPARQL Query Results XML Format or a SPARQL Query Results JSON Format, both are essentially tabular structured data. To effectively represent the SPARQL results, appropriate visualization methods are highly demanded. To create and control dynamic graphical representation of data on the Web, the D3.js JavaScript library is getting popularity as a generic framework based on the widely accepted Web standards such as SVG, JavaScript, HTML5 and CSS. A variety of visualization examples implemented with the D3.js library is already available, however, each of them depends on assumed JSON data structure that differs from the JSON structure returned from SPARQL endpoints. Therefore, it is expected to largely reduce development costs of Semantic Web visualization if a JavaScript library is available which transforms SPARQL Query Results JSON Format into JSON data structures consumed by the D3.js. The d3sparql.js is developed as a generic JavaScript library to fill this gap and can be used to query SPARQL endpoints as an AJAX call and provides various callback functions to visualize the obtained results.
-
-### Currently supports
-
-* Charts
-  * barchart, piechart, scatterplot
-* Graphs
-  * force graph, sankey graph
-* Trees
-  * roundtree, dendrogram, treemap, sunburst, circlepack
-* Maps
-  * coordmap, namedmap
-* Tables
-  * htmltable, htmlhash
-
-### Usage
-
-```html
-<!DOCTYPE html>
-<meta charset="utf-8">
-<html>
- <head>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
-  <script src="d3sparql.js"></script>
-  <script>
-  function exec() {
-    var endpoint = d3.select("#endpoint").property("value")
-    var sparql = d3.select("#sparql").property("value")
-    d3sparql.query(endpoint, sparql, render)
-  }
-  function render(json) {
-    // set options and call the d3xxxxx function in this library ...
-    var config = {
-	  "selector": "#result"
-	}
-    d3sparql.xxxxx(json, config)
-  }
-  </script>
-  <style>
-  <!-- customize CSS -->
-  </style>
- </head>
- <body onload="exec()">
-  <form style="display:none">
-   <input id="endpoint" value="http://dbpedia.org/sparql" type="text">
-   <textarea id="sparql">
-    PREFIX ...
-    SELECT ...
-    WHERE { ... }
-   </textarea>
-  </form>
-  <div id="result"></div>
- </body>
-</html>
+# Implémentation sous Mac
+## Installation de Fuseki
 ```
+brew install fuseki
+```
+## Lancement du fuseki serveur
+```
+fuseki-server
+```
+## Création de la base de données
+Génération du propre projet en rendant sur le site web localhost:3030 et en téléchargeant l'ensemble de données à partir du fichier local Data.ttl, puis en souvenant de l'URL **http://localhost:3030/name_project/query** afin de remplacer le point d'arrivée(#endpoint) dans les fichiers .html.
 
-### Live demo
+# Lancement de l'application
+L'ouverture du fichier index.html vous permettra d'utiliser l'application avec succès. Si la base de données locale n'a pas été installée au préalable, vous pouvez également utiliser le bouton "use cache" pour appeler un fichier local existant afin de générer la visualisation correspondante.
 
-* http://biohackathon.org/d3sparql
-
-### Codebase
-
-* https://github.com/ktym/d3sparql
-
-### Publication
-
-* http://ceur-ws.org/Vol-1320/paper_39.pdf
-
-### Presentation
-
-* http://www.slideshare.net/ToshiakiKatayama/d3sparqljs-demo-at-swat4ls-2014-in-berlin
-
-### ChangeLog
-
-See details at https://github.com/ktym/d3sparql/commits/master/d3sparql.js
-
-* 2013-01-28 Project started
-* 2014-07-03 Made publicly available at GitHub
-* 2014-07-14 Added bar/line charts with scales
-* 2014-07-17 Added default SVG attributes equivalent to CSS styles
-  * Visualizations look good without CSS by default (user can customize style by CSS)
-  * Added descriptions to each visualization function
-* 2014-07-19 Introduced d3sparql name space
-* 2014-07-20 Added Pie, Doughnut and Sankey diagram
-* 2014-11-13 Merged a pull request to visualize a coordination based map
-* 2014-12-11 Updated to set default values in options
-* 2015-02-03 Added README file
-  * updated namedmap to use an option for scale
-  * merged a pull request to insert visualization at the specified DOM ID instead of appending to the body
-* 2015-02-04 Improved to customize the target DOM ID
-* 2015-02-06 Changed to clear the DOM contents before appending elements to update the visualization
-
+# Utilisation de l'application 
+D'une part, vous pouvez tester le fonctionnement actuel du sparql et visualiser les données en cliquant directement sur les boutons existants. D'autre part, vous pouvez également modifier la requête pour l'adapter à d'autres objectifs de votre test. Bien entendu, vous devez veiller à nommer correctement les paramètres entrants.
 
