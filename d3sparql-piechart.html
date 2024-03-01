@@ -2,8 +2,8 @@
 <meta charset="utf-8">
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css"/>
-    <script src="lib/d3/d3.v3.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css"/> -->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="d3sparql.js"></script>
     <script>
     function exec() {
@@ -11,22 +11,40 @@
       var sparql = d3.select("#sparql").property("value")
       d3sparql.query(endpoint, sparql, render)
     }
+    function exec_online() {
+      var endpoint_external = d3.select("#endpoint_external").property("value") // Set the DBpedia SPARQL endpoint
+      var sparql_external = d3.select("#sparql_external").property("value")
+      d3sparql.query(endpoint_external, sparql_external, render_external)
+    }
+    function exec_offline() {
+      d3.json("cache/dbpedia/cache_piechart.json", render)
+    }
+
     function render(json) {
       var config = {
-        "label": "pref",
-        "size": "area",
+        "label": json.head.vars[0],
+        "size": json.head.vars[1],
         "width":  600,  // canvas width
         "height": 600,  // canvas height
         "margin":  10,  // canvas margin
         "hole":   200,  // doughnut hole: 0 for pie, r > 0 for doughnut
-        "selector": "#result"
+        "selector": "#result1"
       }
       d3sparql.piechart(json, config)
     }
-
-    function exec_offline() {
-      d3.json("cache/dbpedia/area-ja.json", render)
+    function render_external(json) {
+      var config = {
+        "label": json.head.vars[0],
+        "size": json.head.vars[1],
+        "width":  600,  // canvas width
+        "height": 600,  // canvas height
+        "margin":  10,  // canvas margin
+        "hole":   200,  // doughnut hole: 0 for pie, r > 0 for doughnut
+        "selector": "#result2"
+      }
+      d3sparql.piechart(json, config)
     }
+    
     function toggle() {
       d3sparql.toggle()
     }
@@ -38,33 +56,72 @@
     </style>
   </head>
   <body>
-    <div id="query" style="margin: 10px">
+    <div id="query" style="margin: 20px; align-items: center;">
       <h1>d3piechart</h1>
       <form class="form-inline">
         <label>SPARQL endpoint:</label>
-        <div class="input-append">
-          <input id="endpoint" class="span5" value="http://dbpedia.org/sparql" type="text">
-          <button class="btn" type="button" onclick="exec()">Query</button>
-          <button class="btn" type="button" onclick="exec_offline()">Use cache</button>
+        <div class="input-append" style="display: flex;">
+          <input id="endpoint" class="span5" value="http://localhost:3030/Mini-projet/query" type="text" style="flex: 1; width: 100%; height: 50%;">
+          <button class="btn" type="button" onclick="exec()">Local Query</button>
+          <button class="btn" type="button" onclick="exec_offline()">Use Cache</button>
           <button class="btn" type="button" onclick="toggle()"><i id="button" class="icon-chevron-up"></i></button>
         </div>
       </form>
-      <textarea id="sparql" class="span9" rows=15>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX yago: <http://dbpedia.org/class/yago/>
-PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
+      <textarea id="sparql" class="span9" rows=15 style="width: 100%; height: 300px;">
+        # This SPARQL query retrieves the titles and box office earnings of movies. It converts the box office earnings to decimal format, 
+        # handling values expressed in thousands (ending with "K") or without, removing the dollar sign if present. 
+        # The results are ordered by box office earnings in descending order and limited to the top 20 highest-earning movies.
+        
+        prefix :      <http://localhost:3333/> 
+        prefix foaf:  <http://xmlns.com/foaf/0.1/> 
+        prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+        prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> 
+        prefix vcard: <http://www.w3.org/2006/vcard/ns#> 
+        prefix xsd:   <http://www.w3.org/2001/XMLSchema#> 
 
-SELECT ?pref ?area
-WHERE {
-  ?s a yago:PrefecturesOfJapan ;
-     rdfs:label ?pref ;
-     dbpedia-owl:areaTotal ?area_total .
-  FILTER (lang(?pref) = 'en')
-  BIND ((?area_total / 1000 / 1000) AS ?area)
-}
-ORDER BY DESC(?area)
+        SELECT ?title ?boxOffice
+        WHERE {
+          ?movie rdf:type rdfs:Movie ;
+                rdfs:title ?title ;
+                :boxOffice ?boxOfficeValue .
+          
+          BIND(IF(STRLEN(?boxOfficeValue) > 1 && STRENDS(?boxOfficeValue, "K"),
+                  xsd:decimal(REPLACE(REPLACE(?boxOfficeValue, "\\$", ""), "K", "")),
+                  xsd:decimal(REPLACE(?boxOfficeValue, "\\$", ""))
+                ) AS ?boxOffice)
+        }
+        ORDER BY DESC(?boxOffice)
+        LIMIT 20
+
+      </textarea>
+      <div id="result1"></div>
+      <form class="form-inline">
+        <label>SPARQL external endpoint:</label>
+        <div class="input-append" style="display: flex;">
+          <input id="endpoint_external" class="span5" value="http://dbpedia.org/sparql" type="text" style="flex: 1; width: 100%; height: 50%;">
+          <button class="btn" type="button" onclick="exec_online()">External Query</button>
+          <button class="btn" type="button" onclick="toggle()"><i id="button" class="icon-chevron-up"></i></button>
+        </div>
+      </form>
+      <textarea id="sparql_external" class="span9" rows=15 style="width: 100%; height: 300px;">
+        # This SPARQL query retrieves the titles and budgets of movies from the DBpedia dataset. It selects distinct movie titles (`?title`) and their corresponding budgets (`?budget`). 
+        # The results are ordered by budget in descending order and limited to the top 20 movies with the highest budgets.
+        
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX dbo: <http://dbpedia.org/ontology/>
+        PREFIX dbp: <http://dbpedia.org/property/>
+
+        SELECT DISTINCT ?title ?budget
+        WHERE {
+          ?movie rdf:type dbo:Film ;
+                dbp:name ?title ;
+                dbo:budget ?budget .
+        }
+        ORDER BY DESC(?budget)
+        LIMIT 20
+
       </textarea>
     </div>
-    <div id="result"></div>
+    <div id="result2"></div>
   </body>
 </html>

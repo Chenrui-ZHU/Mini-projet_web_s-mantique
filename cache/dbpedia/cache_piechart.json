@@ -1,0 +1,23 @@
+
+{ "head": { "link": [], "vars": ["title", "grossDouble"] },
+  "results": { "distinct": false, "ordered": true, "bindings": [
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Ask This of Rikyu" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "6.64e+11" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Keluarga Cemara" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "5.95e+10" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "The Cyclone - Il Ciclone" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "5.25891e+10" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Foxtrot Six" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "2.06e+10" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "One Piece Film: Red" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "1.854e+10" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Bayside Shakedown 2" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "1.735e+10" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Weathering with You" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "1.419e+10" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Star Wars" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "1.0318e+10" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Evangelion: 3.0+1.0 Thrice Upon a Time" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "1.028e+10" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Case Closed: The Fist of Blue Sapphire" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "9.31e+09" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "The Eternal Zero" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "8.76e+09" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Love Letter" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "8.50076e+09" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Crying Out Love, In the Center of the World" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "8.5e+09" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Hero" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "8.15e+09" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Harry Potter" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "7.7e+09" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Gantz" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "7.4e+09" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Bayside Shakedown 3" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "7.31e+09" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "One Piece: Z" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "6.87e+09" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Motifs in the James Bond film series" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "6.83853e+09" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Case Closed: The Darkest Nightmare" }	, "grossDouble": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#double", "value": "6.33e+09" }} ] } }

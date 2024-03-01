@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"/> -->
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="d3sparql.js"></script>
     <script>
@@ -11,63 +11,124 @@
       var sparql = d3.select("#sparql").property("value")
       d3sparql.query(endpoint, sparql, render)
     }
+    function exec_online() {
+      var endpoint_external = d3.select("#endpoint_external").property("value") // Set the DBpedia SPARQL endpoint
+      var sparql_external = d3.select("#sparql_external").property("value")
+      d3sparql.query(endpoint_external, sparql_external, render_external)
+    }
+    function exec_offline() {
+      d3.json("cache/dbpedia/cache_forcegraph.json", render)
+    }
+
     function render(json) {
       var config = {
-        // for d3sparql.graph()
-        "key1": "taxid1",
-        "key2": "taxid2",
-        "label1": "name1",
-        "label2": "name2",
-        // for d3sparql.forcegraph()
-        "radius": function(d) {return 1 + d.label.length},
+        "radius": function(d) { return 5; },
         "charge": -500,
         "distance": 50,
         "width": 1000,
         "height": 750,
-        "selector": "#result"
+        "selector": "#result1"
       }
       d3sparql.forcegraph(json, config)
     }
-
-    function exec_offline() {
-      d3.json("cache/queryResults.json", render)
+    function render_external(json) {
+      var config = {
+        "radius": function(d) { return 5; },
+        "charge": -500,
+        "distance": 50,
+        "width": 1000,
+        "height": 750,
+        "selector": "#result2"
+      }
+      d3sparql.forcegraph(json, config)
     }
+    
     function toggle() {
       d3sparql.toggle()
     }
     </script>
   </head>
   <body>
-    <div id="query" style="margin: 10px">
+    <div id="query" style="margin: 20px; align-items: center;">
       <h1>d3forcegraph</h1>
       <form class="form-inline">
         <label>SPARQL endpoint:</label>
-        <div class="input-append">
-          <!-- Change the value below to your Fuseki endpoint URL -->
-          <input id="endpoint" class="span5" value="http://localhost:3030/Mini-projet/query" type="text">
-          <button class="btn" type="button" onclick="exec()">Query</button>
-          <button class="btn" type="button" onclick="exec_offline()">Use cache</button>
+        <div class="input-append" style="display: flex;">
+          <input id="endpoint" class="span5" value="http://localhost:3030/Mini-projet/query" type="text" style="flex: 1; width: 100%; height: 50%;">
+          <button class="btn" type="button" onclick="exec()">Local Query</button>
+          <button class="btn" type="button" onclick="exec_offline()">Use Cache</button>
           <button class="btn" type="button" onclick="toggle()"><i id="button" class="icon-chevron-up"></i></button>
         </div>
       </form>
-      <textarea id="sparql" class="span9" rows=15>
-prefix :      <http://localhost:3333/> 
-prefix foaf:  <http://xmlns.com/foaf/0.1/> 
-prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> 
-prefix vcard: <http://www.w3.org/2006/vcard/ns#> 
-prefix xsd:   <http://www.w3.org/2001/XMLSchema#> 
+      <textarea id="sparql" class="span9" rows=15 style="width: 100%; height: 300px;">
+        # This SPARQL query aims to find pairs of movies directed by the same director where the first movie was released after the second one. 
+        
+        prefix :      <http://localhost:3333/> 
+        prefix foaf:  <http://xmlns.com/foaf/0.1/> 
+        prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+        prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> 
+        prefix vcard: <http://www.w3.org/2006/vcard/ns#> 
+        prefix xsd:   <http://www.w3.org/2001/XMLSchema#> 
 
-SELECT ?movie ?title
-WHERE {
-  ?movie rdf:type rdfs:Movie ;
-        rdfs:genre :Horror ;
-        rdfs:title ?title .
-}
-LIMIT 10
+        SELECT ?releaseDate1 ?releaseDate2 ?title1 ?title2 
+        WHERE {
+          {
+            SELECT DISTINCT ?director ?releaseDate1 ?releaseDate2 ?title1 ?title2 
+            WHERE {
+              ?director rdf:type rdfs:Person .
+              ?movie1 rdf:type rdfs:Movie ;
+                      rdfs:title ?title1;
+                      rdfs:director ?director ;
+                      rdfs:datePublished/:releasedTheaterDate ?releaseDate1 .
+              ?movie2 rdf:type rdfs:Movie ;
+                      rdfs:title ?title2;
+                      rdfs:director ?director ;
+                      rdfs:datePublished/:releasedTheaterDate ?releaseDate2 .
+              FILTER (?movie1 != ?movie2)
+              FILTER (?releaseDate1 > ?releaseDate2)
+            }
+            LIMIT 20
+          }
+        }
+      </textarea>
+      <div id="result1"></div>
+      <form class="form-inline">
+        <label>SPARQL external endpoint:</label>
+        <div class="input-append" style="display: flex;">
+          <input id="endpoint_external" class="span5" value="http://dbpedia.org/sparql" type="text" style="flex: 1; width: 100%; height: 50%;">
+          <button class="btn" type="button" onclick="exec_online()">External Query</button>
+          <button class="btn" type="button" onclick="toggle()"><i id="button" class="icon-chevron-up"></i></button>
+        </div>
+      </form>
+      <textarea id="sparql_external" class="span9" rows=15 style="width: 100%; height: 300px;">
+        # This SPARQL query retrieves pairs of movies featuring the same actor where the first movie was released before the second one. 
+        
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX dbo: <http://dbpedia.org/ontology/>
+
+        SELECT ?movieName1 ?movieName2 
+        WHERE {
+          {
+            SELECT DISTINCT ?actor ?releaseDate1 ?releaseDate2 ?movieName1 ?movieName2 
+            WHERE {
+              ?actor rdf:type dbo:Actor .
+              ?movie1 rdf:type dbo:Film ;
+                      dbo:starring ?actor ;
+                      dbo:releaseDate ?releaseDate1 .
+              BIND(REPLACE(STR(?movie1), "http://dbpedia.org/resource/", "") AS ?movieName1)
+              ?movie2 rdf:type dbo:Film ;
+                      dbo:starring ?actor ;
+                      dbo:releaseDate ?releaseDate2 .
+              BIND(REPLACE(STR(?movie2), "http://dbpedia.org/resource/", "") AS ?movieName2)
+              FILTER (?movie1 != ?movie2)
+              FILTER (?releaseDate1 < ?releaseDate2)
+            }
+            LIMIT 20
+          }
+        }
 
       </textarea>
     </div>
-    <div id="result"></div>
+    <div id="result2"></div>
   </body>
 </html>

@@ -1,0 +1,23 @@
+
+{ "head": { "link": [], "vars": ["title", "duration"] },
+  "results": { "distinct": false, "ordered": true, "bindings": [
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Meeting MacGuffin" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "598" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Louise (2003 film)" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "597" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Two Too Young" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "595" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "The Awful Tooth" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "595" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Cheburashka Goes to School" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "594" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Duel Personalities" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "591" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Horton Hatches the Egg (film)" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "590" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "There Lived Kozyavin" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "588" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Lovesick (1937 film)" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "587" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Contact (1978 film)" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "586" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Saw (2003 film)" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "584" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "You Ought to Be in Pictures" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "584" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Pigs Is Pigs (1954 film)" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "584" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "El Mono relojero" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "581" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Japanese Relocation" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "580" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Atlantic Patrol" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "580" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Mighty Lak a Goat" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "579" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Goin' Fishin'" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "578" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Mountain of Dinosaurs" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "578" }},
+    { "title": { "type": "literal", "xml:lang": "en", "value": "Osman (film)" }	, "duration": { "type": "typed-literal", "datatype": "http://www.w3.org/2001/XMLSchema#integer", "value": "577" }} ] } }

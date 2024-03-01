@@ -1,0 +1,342 @@
+{
+  "head": {
+    "vars": [
+      "title",
+      "duration"
+    ]
+  },
+  "results": {
+    "bindings": [
+      {
+        "title": {
+          "type": "literal",
+          "value": "The Works and Days (of Tayoko Shiojiri in the Shiotani Basin)"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "518.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Electric Dragon 80,000 V"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "353.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Flying: Confessions of a Free Woman"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "353.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Homeland (Iraq Year Zero)"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "334.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Sleep"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "321.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Miss Mend"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "270.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "In Search of Darkness: Part II"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "263.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "L'Amour Fou"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "255.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Route One/USA"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "253.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Inside the Third Reich"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "250.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Norte, the End of History"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "250.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "The Son of Tarzan"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "248.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "At Berkeley"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "244.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "The 47 Ronin"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "241.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "A Brighter Summer Day"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "240.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "A Grin Without a Cat"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "240.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "The Charles Bukowski Tapes"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "240.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "My Name Is Joker"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "240.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Roughnecks"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "240.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Sayedaty El Gameela"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "240.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "A Girl Thing"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "237.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Napoleon"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "235.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "The Real Thing"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "232.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Perils of Pauline"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "231.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "A Personal Journey With Martin Scorsese Through American Movies"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "226.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Shakira"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "225.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Gods and Generals"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "223.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Crime and Punishment"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "221.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Jhund"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "221.0e0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "On Wings of Eagles"
+        },
+        "duration": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "value": "221.0e0"
+        }
+      }
+    ]
+  }
+}

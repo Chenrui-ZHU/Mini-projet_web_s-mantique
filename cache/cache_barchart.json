@@ -1,0 +1,342 @@
+{
+  "head": {
+    "vars": [
+      "title",
+      "boxOffice"
+    ]
+  },
+  "results": {
+    "bindings": [
+      {
+        "title": {
+          "type": "literal",
+          "value": "Gett: The Trial of Viviane Amsalem"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "987.8"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Citizen Kane"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "977.3"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "A One and a Two..."
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "969.1"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Lore"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "968.9"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "From Beyond"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "946.8"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Belle Epoque"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "943.5"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Rudhramadevi"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "942.7"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Landline"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "940.7"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Neruda"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "938.9"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Aimée & Jaguar"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "927.1"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "The 100-Year-Old Man Who Climbed Out the Window and Disappeared"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "923.9"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Criminal"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "923.4"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Singh Is Bliing"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "919.1"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Simpatico"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "902.1"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Haider"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "901.6"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Toni Morrison: The Pieces I Am"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "901.6"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Paprika"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "881.3"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Finding Mr. Right 2"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "879.8"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "King of the Hill"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "879.6"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "The Hunting Party"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "876.7"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Where the Truth Lies"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "871.5"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Edge of Seventeen"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "870.8"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Angel's Ladies"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "867"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Hansan: Rising Dragon"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "865.9"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Darker Than Night"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "864.2"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Duma"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "860.0"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Anjana Anjani"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "854.8"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Witnesses"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "853.5"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "The Alpinist"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "843.2"
+        }
+      },
+      {
+        "title": {
+          "type": "literal",
+          "value": "Jai Ho"
+        },
+        "boxOffice": {
+          "type": "literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "value": "840.5"
+        }
+      }
+    ]
+  }
+}
