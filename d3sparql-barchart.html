@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+  <head>
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"/> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="d3sparql.js"></script>
+    <script>
+    function exec() {
+      var endpoint = d3.select("#endpoint").property("value")
+      var sparql = d3.select("#sparql").property("value")
+      d3sparql.query(endpoint, sparql, render)
+    }
+    function exec_online() {
+      var endpoint_external = d3.select("#endpoint_external").property("value") // Set the DBpedia SPARQL endpoint
+      var sparql_external = d3.select("#sparql_external").property("value")
+      d3sparql.query(endpoint_external, sparql_external, render_external)
+    }
+    function exec_offline() {
+      d3.json("cache/dbpedia/area-ja.json", render)
+    }
+    function render(json) {
+      var config = {
+        "label_x": "movieTitle",
+        "label_y": "Duration(min)",
+        "var_x": "title",
+        "var_y": "duration",
+        "width":  1000,  // canvas width
+        "height": 400,  // canvas height
+        "margin":  100,  // canvas margin
+        "selector": "#result1"
+      }
+      d3sparql.barchart(json, config)
+    }
+    function render_external(json) {
+      var config = {
+        "label_x": "movieTitle",
+        "label_y": "Duration(min",
+        "var_x": "title",
+        "var_y": "duration",
+        "width":  1000,  // canvas width
+        "height": 400,  // canvas height
+        "margin":  100,  // canvas margin
+        "selector": "#result2"
+      }
+      d3sparql.barchart(json, config)
+    }
+    
+    function toggle() {
+      d3sparql.toggle()
+    }
+    </script>
+    <style>
+    .bar:hover {
+      fill: brown;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="query" style="margin: 20px; align-items: center;">
+      <h1>d3barchart</h1>
+      <form class="form-inline">
+        <label>SPARQL endpoint:</label>
+        <div class="input-append" style="display: flex;">
+          <input id="endpoint" class="span5" value="http://localhost:3030/Mini-projet/query" type="text" style="flex: 1; width: 100%; height: 50%;">
+          <button class="btn" type="button" onclick="exec()">Local Query</button>
+          <button class="btn" type="button" onclick="exec_offline()">Use Cache</button>
+          <button class="btn" type="button" onclick="toggle()"><i id="button" class="icon-chevron-up"></i></button>
+        </div>
+      </form>
+      <textarea id="sparql" class="span9" rows=15 style="width: 100%; height: 300px;">
+        prefix :      <http://localhost:3333/> 
+        prefix foaf:  <http://xmlns.com/foaf/0.1/> 
+        prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+        prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> 
+        prefix vcard: <http://www.w3.org/2006/vcard/ns#> 
+        prefix xsd:   <http://www.w3.org/2001/XMLSchema#> 
+        
+        SELECT ?title ?duration
+        WHERE {
+          ?movie rdf:type rdfs:Movie ;
+                 rdfs:title ?title ;
+                 rdfs:duration ?duration .
+        }
+        ORDER BY DESC(?duration)
+        LIMIT 10
+      </textarea>
+      <div id="result1"></div>
+      <form class="form-inline">
+        <label>SPARQL external endpoint:</label>
+        <div class="input-append" style="display: flex;">
+          <input id="endpoint_external" class="span5" value="http://dbpedia.org/sparql" type="text" style="flex: 1; width: 100%; height: 50%;">
+          <button class="btn" type="button" onclick="exec_online()">External Query</button>
+          <button class="btn" type="button" onclick="toggle()"><i id="button" class="icon-chevron-up"></i></button>
+        </div>
+      </form>
+      <textarea id="sparql_external" class="span9" rows=15 style="width: 100%; height: 300px;">
+        PREFIX dbo: <http://dbpedia.org/ontology/>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+        SELECT ?movie ?title ?duration
+        WHERE {
+          ?movie a dbo:Film ;
+                rdfs:label ?title ;
+                dbo:runtime ?runtime .
+          BIND(xsd:integer(?runtime) AS ?duration)
+          FILTER (langMatches(lang(?title), "en"))
+        }
+        ORDER BY DESC(?duration)
+        LIMIT 10
+      </textarea>
+    </div>
+    <div id="result2"></div>
+  </body>
+</html>

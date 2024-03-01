@@ -1,0 +1,9 @@
+data1 = data1[data1['distributor 4'].isnull() | data1['distributor 5'].isnull() | data1['distributor 6'].isnull() 
+            | data1['distributor 7'].isnull() | data1['distributor 8'].isnull() | data1['distributor 9'].isnull()
+            | data1['distributor 10'].isnull() | data1['distributor 11'].isnull()| data1['distributor 12'].isnull()
+            | data1['distributor 13'].isnull()| data1['distributor 14'].isnull()| data1['distributor 15'].isnull()
+            | data1['distributor 16'].isnull()| data1['distributor 17'].isnull()| data1['distributor 18'].isnull()
+            | data1['distributor 19'].isnull()]
+data1 = data1.drop(['distributor 4', 'distributor 5', 'distributor 6', 'distributor 7', 'distributor 8', 'distributor 9', 'distributor 10', 'distributor 11'
+                    , 'distributor 12', 'distributor 13', 'distributor 14', 'distributor 15', 'distributor 16', 'distributor 17', 'distributor 18'
+                    , 'distributor 19'], axis = 1)

@@ -1,0 +1,112 @@
+{
+  "head": {
+    "vars": [
+      "movie",
+      "title"
+    ]
+  },
+  "results": {
+    "bindings": [
+      {
+        "movie": {
+          "type": "uri",
+          "value": "http://localhost:3333/she_wolf_rising"
+        },
+        "title": {
+          "type": "literal",
+          "value": "She Wolf Rising"
+        }
+      },
+      {
+        "movie": {
+          "type": "uri",
+          "value": "http://localhost:3333/dark_signal"
+        },
+        "title": {
+          "type": "literal",
+          "value": "Dark Signal"
+        }
+      },
+      {
+        "movie": {
+          "type": "uri",
+          "value": "http://localhost:3333/art_of_the_devil_3"
+        },
+        "title": {
+          "type": "literal",
+          "value": "Art of the Devil III"
+        }
+      },
+      {
+        "movie": {
+          "type": "uri",
+          "value": "http://localhost:3333/771403557"
+        },
+        "title": {
+          "type": "literal",
+          "value": "Home"
+        }
+      },
+      {
+        "movie": {
+          "type": "uri",
+          "value": "http://localhost:3333/the_pact_2012"
+        },
+        "title": {
+          "type": "literal",
+          "value": "The Pact"
+        }
+      },
+      {
+        "movie": {
+          "type": "uri",
+          "value": "http://localhost:3333/rucker"
+        },
+        "title": {
+          "type": "literal",
+          "value": "Rucker"
+        }
+      },
+      {
+        "movie": {
+          "type": "uri",
+          "value": "http://localhost:3333/the-stragglers"
+        },
+        "title": {
+          "type": "literal",
+          "value": "Stragglers"
+        }
+      },
+      {
+        "movie": {
+          "type": "uri",
+          "value": "http://localhost:3333/secrets_of_the_clown"
+        },
+        "title": {
+          "type": "literal",
+          "value": "Secrets of the Clown"
+        }
+      },
+      {
+        "movie": {
+          "type": "uri",
+          "value": "http://localhost:3333/the_big_bad"
+        },
+        "title": {
+          "type": "literal",
+          "value": "The Big Bad"
+        }
+      },
+      {
+        "movie": {
+          "type": "uri",
+          "value": "http://localhost:3333/crazies"
+        },
+        "title": {
+          "type": "literal",
+          "value": "The Crazies"
+        }
+      }
+    ]
+  }
+}
